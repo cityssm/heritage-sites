@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sault Ste. Marie Heritage Sites</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cityssm/bulma-a11y@0.4.0/bulma-a11y.min.css" integrity="sha256-YrqCMmMEmKYmLuLlI1phSUZA4V4V104f2CiZB1B1cvc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="navbar is-black">
+      <div class="navbar-brand">
+        <h1 class="navbar-item has-text-weight-bold">
+          Sault Ste. Marie Heritage Sites
+        </h1>
+      </div>
+    </header>
+    <main class="section">
+      <div class="container">
+        <div class="field">
+          <label class="label" for="searchString">Find a Heritage Site</label>
+          <div class="control has-icons-left">
+            <input class="input" id="searchString" name="searchString" type="search" />
+            <span class="icon is-small is-left" aria-hidden="true">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+        <div id="searchResults">
+          <p class="has-text-centered">
+            <i class="fas fa-4x fa-spin fa-circle-notch has-text-grey-lighter" aria-hidden="true"></i><br />
+            <em class="has-text-grey">Loading Heritage Sites...</em>
+          </p>
+        </div>
+      </div>
+    </main>
+    <aside class="modal" id="heritageSiteModal">
+      <div class="modal-background"></div>
+      <div class="modal-content has-background-white">
+        <div class="content p-2">
+          <div data-field="page"></div>
+        </div>
+        <div class="p-2">
+          <h2 class="title is-4">Site Details</h2>
+          <div class="columns is-mobile mr-0">
+            <div class="column has-text-weight-bold" id="label--civicAddress">Civic Address</div>
+            <div class="column" data-field="civicAddress" aria-labelledby="label--civicAddress"></div>
+          </div>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </aside>
+    <script>
+      window.exports = window.exports || {};
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@cityssm/bulma-js@0.3.3/dist/bulma-js.js" integrity="sha256-JJ+sFRyZfGFRTdd3/eioBoU4/ZoV5GaSM1vLVGqaVxI=" crossorigin="anonymous"></script>
+    <script src="scripts/main.min.js"></script>
+  </body>
+</html>
