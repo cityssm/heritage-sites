@@ -1,7 +1,7 @@
 import gulp from "gulp";
 import changed from "gulp-changed";
 import minify from "gulp-minify";
-const publicJavascriptsDestination = "www/scripts";
+const publicJavascriptsDestination = "docs/scripts";
 const publicJavascriptsMinFunction = () => {
     return gulp.src("src/scripts/*.js", { allowEmpty: true })
         .pipe(changed(publicJavascriptsDestination, {

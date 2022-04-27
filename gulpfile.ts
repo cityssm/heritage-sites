@@ -8,7 +8,7 @@ import minify from "gulp-minify";
  * Minify public/javascripts
  */
 
-const publicJavascriptsDestination = "www/scripts";
+const publicJavascriptsDestination = "docs/scripts";
 
 const publicJavascriptsMinFunction = () => {
 

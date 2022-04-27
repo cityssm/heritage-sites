@@ -10,7 +10,7 @@ import csvtojson from "csvtojson";
 
 
 const sourcePagesFolderPath = "src/pages/";
-const wwwPagesFolderPath = "www/pages/";
+const wwwPagesFolderPath = "docs/pages/";
 
 fs.readdir(sourcePagesFolderPath, (readDirectoryError, pageFiles) => {
 
@@ -44,7 +44,7 @@ fs.readdir(sourcePagesFolderPath, (readDirectoryError, pageFiles) => {
 
 
 const heritageSitesCsvPath = "src/data/heritageSites.csv";
-const heritageSitesJsonPath = "www/data/heritageSites.json";
+const heritageSitesJsonPath = "docs/data/heritageSites.json";
 
 console.log("Building " + heritageSitesJsonPath + " ...");
 
