@@ -82,11 +82,21 @@ declare const L;
         })
         .then((pageHTML) => {
           modalElement.querySelector("[data-field='page']").innerHTML = pageHTML;
+
+          const pageAnchorElements = modalElement.querySelectorAll("[data-field='page'] a") as NodeListOf<HTMLAnchorElement>;
+
+          if (pageAnchorElements && pageAnchorElements.length > 0) {
+            for (const anchorElement of pageAnchorElements) {
+              anchorElement.target = "_blank";
+            }
+          }
+
           return true;
         })
         .catch(() => {
           modalElement.querySelector("[data-field='page']").innerHTML = "";
         });
+
     } else {
       modalElement.querySelector("[data-field='page']").innerHTML = "<h1></h1>";
       modalElement.querySelector("[data-field='page'] h1").textContent = heritageSite.descriptionOfProperty;

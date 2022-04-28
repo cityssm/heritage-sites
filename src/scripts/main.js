@@ -50,6 +50,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
             })
                 .then((pageHTML) => {
                 modalElement.querySelector("[data-field='page']").innerHTML = pageHTML;
+                const pageAnchorElements = modalElement.querySelectorAll("[data-field='page'] a");
+                if (pageAnchorElements && pageAnchorElements.length > 0) {
+                    for (const anchorElement of pageAnchorElements) {
+                        anchorElement.target = "_blank";
+                    }
+                }
                 return true;
             })
                 .catch(() => {
