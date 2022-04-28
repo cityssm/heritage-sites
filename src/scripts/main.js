@@ -78,7 +78,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
             mapElement.classList.remove("is-hidden");
             map = L.map(mapElement, {
                 center: [latitude, longitude],
-                zoom: 16
+                zoom: 16,
+                scrollWheelZoom: false
             });
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 19,

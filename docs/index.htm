@@ -18,26 +18,30 @@
         </div>
       </header>
       <section class="section">
-        <div class="container">
-          <div class="field">
-            <label class="label" for="searchString">Find a Heritage Site</label>
-            <div class="control has-icons-left">
-              <input class="input" id="searchString" name="searchString" type="search" />
-              <span class="icon is-small is-left" aria-hidden="true">
-                <i class="fas fa-search"></i>
-              </span>
-            </div>
+        <div class="field">
+          <label class="label" for="searchString">Find a Heritage Site</label>
+          <div class="control has-icons-left">
+            <input class="input" id="searchString" name="searchString" type="search" />
+            <span class="icon is-small is-left" aria-hidden="true">
+              <i class="fas fa-search"></i>
+            </span>
           </div>
-          <div id="searchResults" aria-label="Search Results">
+        </div>
+        <div id="searchResults" aria-label="Search Results">
             <p class="has-text-centered">
               <i class="fas fa-4x fa-spin fa-circle-notch has-text-grey-lighter" aria-hidden="true"></i><br />
               <em class="has-text-grey">Loading Heritage Sites...</em>
             </p>
           </div>
-        </div>
       </section>
-      <footer>
-
+      <footer class="has-background-grey-darker has-text-white">
+        <div class="section">
+          City of Sault Ste. Marie<br />
+          <a class="has-text-white-ter" href="https://raw.githubusercontent.com/cityssm/heritage-sites/main/src/data/heritageSites.csv" target="_blank" rel="nofollow noreferrer" download>
+            <i class="fas fa-download" aria-hidden="true"></i>
+            Download Heritage Sites as CSV
+          </a>
+        </div>
       </footer>
     </main>
     <aside class="modal" id="heritageSiteModal">

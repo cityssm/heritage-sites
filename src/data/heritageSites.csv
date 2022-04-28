@@ -1,9 +1,9 @@
 siteId,descriptionOfProperty,civicAddress,legalDescription,ownerName,ownerAddress,bylawNumber,datePassed,latitude,longitude,designatedOrListed,hasPage,keywords
 clergue-block-house,Clergue Block House,75 Huron Street,,,,80-113,31-Mar-80,46.506046,-84.324302,designated,TRUE,ermatinger
 old-stone-house,The Old Stone House,831 Queen Street East,,,,80-112,31-Mar-80,46.506047,-84.324538,designated,TRUE,ermatinger clergue
-precious-blood-cathedral,Precious Blood Cathedral,778 Queen Street East,,,,81-18,26-Jan-81,46.507436,-84.32575,designated,FALSE,church
-bishop-fauquier-memorial-chapel-cemetery,Bishop Fauquier Memorial Chapel & Cemetery,1540 Queen St E,,,,81-19 81-20,26-Jan-81,46.499883,-84.287255,designated,FALSE,
-coronation-hussey-block,Coronation and Hussey Block,234 - 246 Queen St E,,,,83-60,28-Feb-83,46.514518,-84.336644,designated,FALSE,
+precious-blood-cathedral,Precious Blood Cathedral,778 Queen Street East,,,,81-18,26-Jan-81,46.507436,-84.32575,designated,TRUE,church
+bishop-fauquier-memorial-chapel-cemetery,Bishop Fauquier Memorial Chapel & Cemetery,1540 Queen St E,,,,81-19 81-20,26-Jan-81,46.499883,-84.287255,designated,TRUE,
+coronation-hussey-block,Coronation and Hussey Block,234 - 246 Queen St E,,,,83-60,28-Feb-83,46.514518,-84.336644,designated,TRUE,
 algonquin-hotel,Algonquin Hotel,864 Queen St E,,,,83-60,28-Feb-83,46.506336,-84.323058,designated,FALSE,
 wellington-square-townhouses,Wellington Square Townhouses,780 Wellington St E,,,,83-60,28-Feb-83,46.509534,-84.320679,designated,FALSE,
 general-office-building,General Office Building,75 Huron St,,,,83-60,28-Feb-83,46.5154884,-84.348692,designated,FALSE,

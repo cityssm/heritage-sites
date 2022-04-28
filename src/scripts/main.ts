@@ -121,7 +121,8 @@ declare const L;
       // eslint-disable-next-line unicorn/no-array-callback-reference, unicorn/no-array-method-this-argument
       map = L.map(mapElement, {
         center: [latitude, longitude],
-        zoom: 16
+        zoom: 16,
+        scrollWheelZoom: false
       });
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
