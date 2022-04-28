@@ -6,54 +6,81 @@
     <title>Sault Ste. Marie Heritage Sites</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cityssm/bulma-a11y@0.4.0/bulma-a11y.min.css" integrity="sha256-YrqCMmMEmKYmLuLlI1phSUZA4V4V104f2CiZB1B1cvc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.css" integrity="sha256-O4WK/g+HUIRMtgNwSRMA+lTFXVCZOSNwqMt2jboE8gg=" crossorigin="anonymous">
   </head>
   <body>
-    <header class="navbar is-black">
-      <div class="navbar-brand">
-        <h1 class="navbar-item has-text-weight-bold">
-          Sault Ste. Marie Heritage Sites
-        </h1>
-      </div>
-    </header>
-    <main class="section">
-      <div class="container">
-        <div class="field">
-          <label class="label" for="searchString">Find a Heritage Site</label>
-          <div class="control has-icons-left">
-            <input class="input" id="searchString" name="searchString" type="search" />
-            <span class="icon is-small is-left" aria-hidden="true">
-              <i class="fas fa-search"></i>
-            </span>
+    <main>
+      <header class="navbar is-black">
+        <div class="navbar-brand">
+          <h1 class="navbar-item has-text-weight-bold">
+            Sault Ste. Marie Heritage Sites
+          </h1>
+        </div>
+      </header>
+      <section class="section">
+        <div class="container">
+          <div class="field">
+            <label class="label" for="searchString">Find a Heritage Site</label>
+            <div class="control has-icons-left">
+              <input class="input" id="searchString" name="searchString" type="search" />
+              <span class="icon is-small is-left" aria-hidden="true">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+          <div id="searchResults" aria-label="Search Results">
+            <p class="has-text-centered">
+              <i class="fas fa-4x fa-spin fa-circle-notch has-text-grey-lighter" aria-hidden="true"></i><br />
+              <em class="has-text-grey">Loading Heritage Sites...</em>
+            </p>
           </div>
         </div>
-        <div id="searchResults">
-          <p class="has-text-centered">
-            <i class="fas fa-4x fa-spin fa-circle-notch has-text-grey-lighter" aria-hidden="true"></i><br />
-            <em class="has-text-grey">Loading Heritage Sites...</em>
-          </p>
-        </div>
-      </div>
+      </section>
+      <footer>
+
+      </footer>
     </main>
     <aside class="modal" id="heritageSiteModal">
       <div class="modal-background"></div>
-      <div class="modal-content has-background-white">
-        <div class="content p-2">
-          <div data-field="page"></div>
-        </div>
-        <div class="p-2">
+      <div class="modal-card">
+        <header class="modal-card-head is-justify-content-flex-end">
+          <p class="modal-card-title">Heritage Site Details</p>
+          <button class="button is-rounded is-info" id="modal-button--close" title="Close">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </header>
+        <section class="modal-card-body">
+          <div class="content" data-field="page"></div>
           <h2 class="title is-4">Site Details</h2>
-          <div class="columns is-mobile mr-0">
-            <div class="column has-text-weight-bold" id="label--civicAddress">Civic Address</div>
-            <div class="column" data-field="civicAddress" aria-labelledby="label--civicAddress"></div>
-          </div>
-        </div>
+          <table class="table is-fullwidth">
+          <tbody>
+            <tr>
+              <th scope="row">Civic Address</th>
+              <td data-field="civicAddress"></td>
+            </tr>
+            <tr>
+              <th scope="row">Legal Description</th>
+              <td data-field="legalDescription"></td>
+            </tr>
+            <tr>
+              <th scope="row">Owner</th>
+              <td>
+                <span data-field="ownerName"></span><br />
+                <span data-field="ownerAddress"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          <div id="heritageSiteMap" style="height:400px;max-height:80vh"></div>
+        </section>
       </div>
-      <button class="modal-close is-large" aria-label="close"></button>
     </aside>
     <script>
       window.exports = window.exports || {};
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@cityssm/bulma-js@0.3.3/dist/bulma-js.js" integrity="sha256-JJ+sFRyZfGFRTdd3/eioBoU4/ZoV5GaSM1vLVGqaVxI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.js" integrity="sha256-OnFzHtqrwoenz6OjU3Z4SPDkER5Ih/vqRUvS5doFcZo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wicg-inert@3.1.1/dist/inert.min.js" integrity="sha256-rZXRxwSLqbLK9W7NcdARJZCCatWoXcBxuW5fyJGJ8S0=" crossorigin="anonymous"></script>
     <script src="scripts/main.min.js"></script>
   </body>
 </html>

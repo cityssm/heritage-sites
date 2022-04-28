@@ -2,10 +2,33 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
     let heritageSites = [];
+    const searchStringElement = document.querySelector("#searchString");
+    const searchResultsElement = document.querySelector("#searchResults");
     const modalElement = document.querySelector("#heritageSiteModal");
+    const mapElement = document.querySelector("#heritageSiteMap");
+    let map;
     const closeHeritageSiteModal = () => {
+        if (map) {
+            map.remove();
+            map = undefined;
+            mapElement.innerHTML = "";
+        }
         modalElement.classList.remove("is-active");
         document.querySelector("html").classList.remove("is-clipped");
+        document.querySelector("main").removeAttribute("inert");
+    };
+    const closeHeritageSiteModalAndClearHash = () => {
+        closeHeritageSiteModal();
+        const currentHash = window.location.hash;
+        let focusTargetElement = searchResultsElement.querySelector("a[href='" + currentHash + "']");
+        if (!focusTargetElement) {
+            focusTargetElement = searchStringElement;
+        }
+        window.location.hash = "";
+        Promise.resolve().then(() => {
+            focusTargetElement.focus();
+            return;
+        });
     };
     const openHeritageSiteModal = () => {
         const siteId = window.location.hash.slice(1).toLowerCase();
@@ -16,12 +39,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
         if (!heritageSite) {
             return;
         }
-        if (heritageSite.pageName !== "") {
+        if (heritageSite.hasPage === "TRUE") {
             modalElement.querySelector("[data-field='page']").innerHTML = "<p class=\"pt-4 has-text-centered\">" +
                 "<i class=\"fas fa-3x fa-spin fa-circle-notch has-text-grey-lighter\"></i><br />" +
                 "<em class=\"has-text-grey\">Loading details...</em>" +
                 "</p>";
-            window.fetch("pages/" + heritageSite.pageName + ".htm")
+            window.fetch("pages/" + heritageSite.siteId + ".htm")
                 .then((response) => {
                 return response.text();
             })
@@ -33,27 +56,60 @@ Object.defineProperty(exports, "__esModule", { value: true });
                 modalElement.querySelector("[data-field='page']").innerHTML = "";
             });
         }
+        else {
+            modalElement.querySelector("[data-field='page']").innerHTML = "<h1></h1>";
+            modalElement.querySelector("[data-field='page'] h1").textContent = heritageSite.descriptionOfProperty;
+        }
         modalElement.querySelector("[data-field='civicAddress']")
             .textContent = heritageSite.civicAddress;
+        modalElement.querySelector("[data-field='legalDescription']")
+            .textContent = heritageSite.legalDescription;
+        modalElement.querySelector("[data-field='ownerName']")
+            .textContent = heritageSite.ownerName;
+        modalElement.querySelector("[data-field='ownerAddress']")
+            .textContent = heritageSite.ownerAddress;
         modalElement.classList.add("is-active");
         document.querySelector("html").classList.add("is-clipped");
+        document.querySelector("main").setAttribute("inert", "inert");
+        modalElement.querySelector(".modal-card-body").scrollTop = 0;
+        if (heritageSite.latitude !== "" && heritageSite.longitude !== "") {
+            const latitude = Number.parseFloat(heritageSite.latitude);
+            const longitude = Number.parseFloat(heritageSite.longitude);
+            mapElement.classList.remove("is-hidden");
+            map = L.map(mapElement, {
+                center: [latitude, longitude],
+                zoom: 16
+            });
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19,
+                attribution: "&copy; <a href=\"https://openstreetmap.org/copyright\">OpenStreetMap contributors</a>"
+            }).addTo(map);
+            L.marker({ lon: longitude, lat: latitude })
+                .bindPopup(heritageSite.descriptionOfProperty)
+                .addTo(map);
+        }
+        else {
+            mapElement.classList.add("is-hidden");
+        }
     };
-    const searchResultTemplateHTML = "<div class=\"columns\">" +
-        ("<div class=\"column is-7\">" +
-            "<strong data-field=\"descriptionOfProperty\"></strong><br />" +
-            "<span data-field=\"civicAddress\" title=\"Civic Address\"></span>" +
-            "</div>") +
-        ("<div class=\"column is-5\">" +
+    const searchResultsTableInnerHTML = "<thead><tr>" +
+        "<th>Description of Property</th>" +
+        "<th>Bylaw Number</th>" +
+        "</tr></thead>" +
+        "<tbody></tbody>";
+    const searchResultRowInnerHTML = ("<td>" +
+        "<a class=\"has-text-weight-bold\" data-field=\"descriptionOfProperty\"></a><br />" +
+        "<span data-field=\"civicAddress\" title=\"Civic Address\"></span>" +
+        "</td>") +
+        ("<td>" +
             "<span data-field=\"bylawNumber\" title=\"Bylaw Number\"></span><br />" +
             "<span data-field=\"datePassed\" title=\"Date Passed\"></span>" +
-            "</div>");
-    "</div>";
-    const searchStringElement = document.querySelector("#searchString");
-    const searchResultsElement = document.querySelector("#searchResults");
+            "</td>");
     const refreshSearchResults = () => {
         let resultCount = 0;
-        const searchResultsPanelElement = document.createElement("div");
-        searchResultsPanelElement.className = "panel";
+        const searchResultsTableElement = document.createElement("table");
+        searchResultsTableElement.className = "table is-fullwidth";
+        searchResultsTableElement.innerHTML = searchResultsTableInnerHTML;
         const searchString = searchStringElement.value;
         const searchStringPieces = searchString.toLowerCase().split(" ");
         const searchURL = new URL(window.location);
@@ -74,24 +130,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
             }
             if (includeSite) {
                 resultCount += 1;
-                const panelBlockElement = document.createElement("a");
-                panelBlockElement.className = "panel-block is-block";
-                panelBlockElement.href = "#" + heritageSite.siteId;
-                panelBlockElement.innerHTML = searchResultTemplateHTML;
-                panelBlockElement.querySelector("[data-field='descriptionOfProperty']")
-                    .textContent = heritageSite.descriptionOfProperty;
-                panelBlockElement.querySelector("[data-field='civicAddress']")
+                const rowElement = document.createElement("tr");
+                rowElement.innerHTML = searchResultRowInnerHTML;
+                const descriptionOfPropertyAnchorElement = rowElement.querySelector("[data-field='descriptionOfProperty']");
+                descriptionOfPropertyAnchorElement.href = "#" + heritageSite.siteId;
+                descriptionOfPropertyAnchorElement.textContent = heritageSite.descriptionOfProperty;
+                rowElement.querySelector("[data-field='civicAddress']")
                     .textContent = heritageSite.civicAddress;
-                panelBlockElement.querySelector("[data-field='bylawNumber']")
+                rowElement.querySelector("[data-field='bylawNumber']")
                     .textContent = heritageSite.bylawNumber;
-                panelBlockElement.querySelector("[data-field='datePassed']")
+                rowElement.querySelector("[data-field='datePassed']")
                     .textContent = heritageSite.datePassed;
-                searchResultsPanelElement.append(panelBlockElement);
+                searchResultsTableElement.querySelector("tbody").append(rowElement);
             }
         }
         searchResultsElement.innerHTML = "";
         if (resultCount > 0) {
-            searchResultsElement.append(searchResultsPanelElement);
+            searchResultsElement.append(searchResultsTableElement);
+        }
+        else {
+            searchResultsElement.innerHTML = "<div class=\"message is-info\">" +
+                "<p class=\"message-body\">No heritage sites have been found using the above search criteria.</p>" +
+                "</div>";
         }
     };
     const loadData = () => {
@@ -133,9 +193,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
     }
     loadData();
     searchStringElement.addEventListener("keyup", refreshSearchResults);
-    modalElement.querySelector(".modal-close").addEventListener("click", () => {
-        closeHeritageSiteModal();
-        window.location.hash = "";
+    modalElement.querySelector("#modal-button--close").addEventListener("click", closeHeritageSiteModalAndClearHash);
+    document.addEventListener("keydown", (keyboardEvent) => {
+        if (modalElement.classList.contains("is-active") && keyboardEvent.key === "Escape") {
+            closeHeritageSiteModalAndClearHash();
+        }
     });
     window.addEventListener("hashchange", openHeritageSiteModal);
 })();

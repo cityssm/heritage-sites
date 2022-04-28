@@ -1,3 +1,30 @@
-siteId,descriptionOfProperty,civicAddress,bylawNumber,constructionYear,datePassed,latitude,longitude,pageName,keywords
-clergue-block-house,Clergue Block House,75 Huron Street,80-113,,1980-03-31,,,clergue-block-house,ermatinger
-old-stone-house,The Old Stone House,831 Queen Street East,80-112,1813,1980-03-31,,,old-stone-house,ermatinger clergue
+siteId,descriptionOfProperty,civicAddress,legalDescription,ownerName,ownerAddress,bylawNumber,datePassed,latitude,longitude,designatedOrListed,hasPage,keywords
+clergue-block-house,Clergue Block House,75 Huron Street,,,,80-113,31-Mar-80,46.506046,-84.324302,designated,TRUE,ermatinger
+old-stone-house,The Old Stone House,831 Queen Street East,,,,80-112,31-Mar-80,46.506047,-84.324538,designated,TRUE,ermatinger clergue
+precious-blood-cathedral,Precious Blood Cathedral,778 Queen Street East,,,,81-18,26-Jan-81,46.507436,-84.32575,designated,FALSE,church
+bishop-fauquier-memorial-chapel-cemetery,Bishop Fauquier Memorial Chapel & Cemetery,1540 Queen St E,,,,81-19 81-20,26-Jan-81,46.499883,-84.287255,designated,FALSE,
+coronation-hussey-block,Coronation and Hussey Block,234 - 246 Queen St E,,,,83-60,28-Feb-83,46.514518,-84.336644,designated,FALSE,
+algonquin-hotel,Algonquin Hotel,864 Queen St E,,,,83-60,28-Feb-83,46.506336,-84.323058,designated,FALSE,
+wellington-square-townhouses,Wellington Square Townhouses,780 Wellington St E,,,,83-60,28-Feb-83,46.509534,-84.320679,designated,FALSE,
+general-office-building,General Office Building,75 Huron St,,,,83-60,28-Feb-83,46.5154884,-84.348692,designated,FALSE,
+upton,Upton,10 Kensington Terrace,,,,83-266,24-Oct-83,46.506169,-84.311943,designated,FALSE,
+old-post-office,Old Post Office,690 Queen St East,,,,83-266,24-Oct-83,46.507963,-84.32789,designated,FALSE,
+1902-family-residence,1902 Family Residence,115 Upton Rd,,,,83-266,24-Oct-83,46.505858,-84.313738,designated,FALSE,
+eastbourne,Eastbourne,1048 Queen St E,,,,83-266 84-245 85-197,24-Oct,46.505449,-84.313995,designated,FALSE,
+central-united-church,Central United Church,160 Spring St,,,,85-267,08-Oct-85,46.511094,-84.329415,designated,FALSE,
+barnes-block,Barnes Block,3 - 7 Queen St E,,,,86-189,28-Jul-86,46.51749,-84.341056,designated,FALSE,
+dawson-block,Dawson Block,708 - 714 Queen St E,,,,86-189,28-Jul-86,46.507729,-84.327477,designated,FALSE,
+barnes-fawcett-block,Barnes-Fawcett Block,358 - 366 Queen St E,,,,89-312,16-Oct-89,46.512789,-84.334364,designated,FALSE,
+mcleod-family-residence,McLeod Family Residence,143 McGregor Ave,,,,91-229,18-Nov-91,46.506013,-84.311367,designated,FALSE,
+buchan-house,Buchan House - Mockingbird Hill Farm,943 Landslide Rd,,,,92-18,13-Jun-94,46.5933,-84.280522,designated,FALSE,
+old-town-cemetery,Old Town Cemetery - Queen Street Cemetery,1186 Queen St E,,,,94-113,13-Jun-94,46.504862,-84.305654,designated,FALSE,
+34-36-herrick-street,34 - 36 Herrick Street ,34 - 36 Herrick St,,,,95-89,29-May-95,46.507666,-84.322759,designated,FALSE,
+canadian-bushplane-heritage-centre,Canadian Bushplane Heritage Centre,69 Church St,,,,2002-37,25-Feb-02,46.5049246,-84.325013,designated,FALSE,
+forest-research-laboratory,Forest Research Laboratory,875 Queen St E,,,,2002-38,25-Feb-02,46.505608,-84.322352,designated,FALSE,
+north-west-company-lock,North West Company Lock,75 Huron St,,,,2002-39,25-Feb-02,46.515708,-84.348751,designated,FALSE,
+sault-ste-marie-courthouse,Sault Ste. Marie Courthouse,426 Queen St E,,,,2004-162,27-Sep-04,46.512037,-84.332386,designated,FALSE,
+memorial-tower,Memorial Tower,269 Queen St E,,,,2006-164,24-Jul-06,46.514273,-84.336896,designated,FALSE,
+911-wellington-street-east,Residence,911 Wellington St E,,,,2008-193,03-Nov-08,46.509444,-84.318545,designated,FALSE,
+1035-queen-street-east,Residence,1035 Queen St E,,,,2008-193,03-Nov-08,46.504846,-84.314316,designated,FALSE,
+1164-queen-street-east,Residence,1164 Queen St E,,,,2012-77,14-May-12,46.505246,-84.309104,designated,FALSE,
+bishophurst,Bishophurst,134 Simpson St,,,,,,46.506759,-84.315702,designated,FALSE,
