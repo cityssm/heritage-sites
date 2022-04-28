@@ -72,6 +72,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
         document.querySelector("html").classList.add("is-clipped");
         document.querySelector("main").setAttribute("inert", "inert");
         modalElement.querySelector(".modal-card-body").scrollTop = 0;
+        modalElement.querySelector(".modal-card-title").focus();
         if (heritageSite.latitude !== "" && heritageSite.longitude !== "") {
             const latitude = Number.parseFloat(heritageSite.latitude);
             const longitude = Number.parseFloat(heritageSite.longitude);

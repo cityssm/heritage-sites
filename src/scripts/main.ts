@@ -109,6 +109,7 @@ declare const L;
     document.querySelector("html").classList.add("is-clipped");
     document.querySelector("main").setAttribute("inert", "inert");
     modalElement.querySelector(".modal-card-body").scrollTop = 0;
+    (modalElement.querySelector(".modal-card-title") as HTMLElement).focus();
 
     // build map
     if (heritageSite.latitude !== "" && heritageSite.longitude !== "") {
