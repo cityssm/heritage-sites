@@ -1,0 +1,27 @@
+@media print {
+  html.is-clipped {
+    overflow: visible !important;
+
+    main,
+    .modal-card-head {
+      display: none;
+    }
+
+    .modal {
+      position: static;
+      display: block;
+      overflow: auto;
+    }
+
+    .modal-card {
+      display: block;
+      max-height: none;
+      margin: 0;
+      overflow: auto;
+    }
+
+    #heritageSiteMap {
+      page-break-inside: avoid;
+    }
+  }
+}

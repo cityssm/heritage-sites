@@ -23,11 +23,26 @@ const publicJavascriptsMinFunction = () => {
 gulp.task("public-javascript-min", publicJavascriptsMinFunction);
 
 /*
+ * Copy CSS
+ */
+
+const publicStylesDestination = "docs/styles";
+
+const publicStylesCopyFunction = () => {
+
+  return gulp.src("src/styles/*.css", { allowEmpty: true })
+    .pipe(gulp.dest(publicStylesDestination));
+};
+
+gulp.task("public-styles", publicStylesCopyFunction);
+
+/*
  * Watch
  */
 
 const watchFunction = () => {
   gulp.watch("src/scripts/*.js", publicJavascriptsMinFunction);
+  gulp.watch("src/styles/*.css", publicStylesCopyFunction);
 };
 
 gulp.task("watch", watchFunction);
@@ -38,5 +53,6 @@ gulp.task("watch", watchFunction);
 
 gulp.task("default", () => {
   publicJavascriptsMinFunction();
+  publicStylesCopyFunction();
   watchFunction();
 });
