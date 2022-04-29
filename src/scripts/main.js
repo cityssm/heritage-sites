@@ -64,7 +64,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
         }
         else {
             modalElement.querySelector("[data-field='page']").innerHTML = "<h1></h1>";
-            modalElement.querySelector("[data-field='page'] h1").textContent = heritageSite.descriptionOfProperty;
+            modalElement.querySelector("[data-field='page'] h1").textContent = heritageSite.descriptionOfSite;
         }
         modalElement.querySelector("[data-field='civicAddress']")
             .textContent = heritageSite.civicAddress;
@@ -93,7 +93,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
                 attribution: "&copy; <a href=\"https://openstreetmap.org/copyright\">OpenStreetMap contributors</a>"
             }).addTo(map);
             L.marker({ lon: longitude, lat: latitude })
-                .bindPopup(heritageSite.descriptionOfProperty)
+                .bindPopup(heritageSite.descriptionOfSite)
                 .addTo(map);
         }
         else {
@@ -101,18 +101,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
         }
     };
     const searchResultsTableInnerHTML = "<thead><tr>" +
-        "<th>Description of Property</th>" +
+        "<th>Description of Site</th>" +
         "<th>Bylaw Number</th>" +
+        "<th>Site Type</th>" +
         "</tr></thead>" +
         "<tbody></tbody>";
     const searchResultRowInnerHTML = ("<td>" +
-        "<a class=\"has-text-weight-bold\" data-field=\"descriptionOfProperty\"></a><br />" +
+        "<a class=\"has-text-weight-bold\" data-field=\"descriptionOfSite\"></a><br />" +
         "<span data-field=\"civicAddress\" title=\"Civic Address\"></span>" +
         "</td>") +
         ("<td>" +
             "<span data-field=\"bylawNumber\" title=\"Bylaw Number\"></span><br />" +
             "<span data-field=\"datePassed\" title=\"Date Passed\"></span>" +
-            "</td>");
+            "</td>") +
+        "<td data-field=\"siteType\"></td>";
     const refreshSearchResults = () => {
         let resultCount = 0;
         const searchResultsTableElement = document.createElement("table");
@@ -140,15 +142,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
                 resultCount += 1;
                 const rowElement = document.createElement("tr");
                 rowElement.innerHTML = searchResultRowInnerHTML;
-                const descriptionOfPropertyAnchorElement = rowElement.querySelector("[data-field='descriptionOfProperty']");
-                descriptionOfPropertyAnchorElement.href = "#" + heritageSite.siteId;
-                descriptionOfPropertyAnchorElement.textContent = heritageSite.descriptionOfProperty;
+                const descriptionOfSiteAnchorElement = rowElement.querySelector("[data-field='descriptionOfSite']");
+                descriptionOfSiteAnchorElement.href = "#" + heritageSite.siteId;
+                descriptionOfSiteAnchorElement.textContent = heritageSite.descriptionOfSite;
                 rowElement.querySelector("[data-field='civicAddress']")
                     .textContent = heritageSite.civicAddress;
                 rowElement.querySelector("[data-field='bylawNumber']")
                     .textContent = heritageSite.bylawNumber;
                 rowElement.querySelector("[data-field='datePassed']")
                     .textContent = heritageSite.datePassed;
+                rowElement.querySelector("[data-field='siteType']")
+                    .textContent = heritageSite.siteType;
                 searchResultsTableElement.querySelector("tbody").append(rowElement);
             }
         }
@@ -170,7 +174,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
             .then((loadedHeritageSites) => {
             heritageSites = loadedHeritageSites;
             for (const heritageSite of heritageSites) {
-                heritageSite.searchString = heritageSite.descriptionOfProperty.toLowerCase() + " " +
+                heritageSite.searchString = heritageSite.descriptionOfSite.toLowerCase() + " " +
                     heritageSite.civicAddress.toLowerCase() + " " +
                     heritageSite.keywords.toLowerCase();
             }

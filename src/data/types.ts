@@ -1,6 +1,6 @@
 export interface HeritageSite {
   siteId: string;
-  descriptionOfProperty: string;
+  descriptionOfSite: string;
   civicAddress: string;
   legalDescription: string;
   ownerName: string;
@@ -9,7 +9,8 @@ export interface HeritageSite {
   datePassed: string;
   latitude: string;
   longitude: string;
-  designatedOrListed: "designated" | "listed";
+  siteType: "Property" | "Monument" | "Plaque";
+  designatedOrListed: "Designated" | "Listed";
   hasPage: "TRUE" | "FALSE";
   keywords: string;
   searchString?: string;

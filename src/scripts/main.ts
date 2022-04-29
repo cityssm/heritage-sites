@@ -8,7 +8,6 @@ declare const bulmaJS: BulmaJS;
 declare const L;
 
 (() => {
-
   let heritageSites: HeritageSite[] = [];
 
   const searchStringElement = document.querySelector("#searchString") as HTMLInputElement;
@@ -99,7 +98,7 @@ declare const L;
 
     } else {
       modalElement.querySelector("[data-field='page']").innerHTML = "<h1></h1>";
-      modalElement.querySelector("[data-field='page'] h1").textContent = heritageSite.descriptionOfProperty;
+      modalElement.querySelector("[data-field='page'] h1").textContent = heritageSite.descriptionOfSite;
     }
 
     modalElement.querySelector("[data-field='civicAddress']")
@@ -142,7 +141,7 @@ declare const L;
       }).addTo(map);
 
       L.marker({ lon: longitude, lat: latitude })
-        .bindPopup(heritageSite.descriptionOfProperty)
+        .bindPopup(heritageSite.descriptionOfSite)
         .addTo(map);
 
     } else {
@@ -151,20 +150,22 @@ declare const L;
   };
 
   const searchResultsTableInnerHTML = "<thead><tr>" +
-    "<th>Description of Property</th>" +
+    "<th>Description of Site</th>" +
     "<th>Bylaw Number</th>" +
+    "<th>Site Type</th>" +
     "</tr></thead>" +
     "<tbody></tbody>";
 
   const searchResultRowInnerHTML =
     ("<td>" +
-      "<a class=\"has-text-weight-bold\" data-field=\"descriptionOfProperty\"></a><br />" +
+      "<a class=\"has-text-weight-bold\" data-field=\"descriptionOfSite\"></a><br />" +
       "<span data-field=\"civicAddress\" title=\"Civic Address\"></span>" +
       "</td>") +
     ("<td>" +
       "<span data-field=\"bylawNumber\" title=\"Bylaw Number\"></span><br />" +
       "<span data-field=\"datePassed\" title=\"Date Passed\"></span>" +
-      "</td>");
+      "</td>") +
+      "<td data-field=\"siteType\"></td>";
 
   const refreshSearchResults = () => {
 
@@ -204,10 +205,10 @@ declare const L;
         const rowElement = document.createElement("tr");
         rowElement.innerHTML = searchResultRowInnerHTML;
 
-        const descriptionOfPropertyAnchorElement = rowElement.querySelector("[data-field='descriptionOfProperty']") as HTMLAnchorElement;
+        const descriptionOfSiteAnchorElement = rowElement.querySelector("[data-field='descriptionOfSite']") as HTMLAnchorElement;
 
-        descriptionOfPropertyAnchorElement.href = "#" + heritageSite.siteId;
-        descriptionOfPropertyAnchorElement.textContent = heritageSite.descriptionOfProperty;
+        descriptionOfSiteAnchorElement.href = "#" + heritageSite.siteId;
+        descriptionOfSiteAnchorElement.textContent = heritageSite.descriptionOfSite;
 
         (rowElement.querySelector("[data-field='civicAddress']") as HTMLElement)
           .textContent = heritageSite.civicAddress;
@@ -217,6 +218,9 @@ declare const L;
 
         (rowElement.querySelector("[data-field='datePassed']") as HTMLElement)
           .textContent = heritageSite.datePassed;
+
+        (rowElement.querySelector("[data-field='siteType']") as HTMLElement)
+          .textContent = heritageSite.siteType;
 
         searchResultsTableElement.querySelector("tbody").append(rowElement);
       }
@@ -244,7 +248,7 @@ declare const L;
         heritageSites = loadedHeritageSites;
 
         for (const heritageSite of heritageSites) {
-          heritageSite.searchString = heritageSite.descriptionOfProperty.toLowerCase() + " " +
+          heritageSite.searchString = heritageSite.descriptionOfSite.toLowerCase() + " " +
             heritageSite.civicAddress.toLowerCase() + " " +
             heritageSite.keywords.toLowerCase();
         }
