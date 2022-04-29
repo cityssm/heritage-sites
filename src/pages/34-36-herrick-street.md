@@ -1,5 +1,7 @@
 # 34 - 36 Herrick Street
 
+![34 - 36 Herrick Street](images/34-26-herrick-street.png)
+
 Built as a single structure in 1889, this duplex is an example of a popular French style of architecture known as Second Empire, of which the most distinctive feature is the mansard roof. This house is the first known brick-faced house in the city.
 
 ## Documents
