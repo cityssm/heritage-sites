@@ -50,9 +50,18 @@
       <div class="modal-card">
         <header class="modal-card-head is-justify-content-flex-end">
           <a class="modal-card-title" style="cursor:default">Heritage Site Details</a>
-          <button class="button is-rounded is-info" id="modal-button--close" title="Close">
-            <i class="fas fa-times" aria-hidden="true"></i>
-          </button>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-rounded is-info" title="Print" onclick="window.print()">
+                <i class="fas fa-print" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="control">
+              <button class="button is-rounded is-info" id="modal-button--close" title="Close">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
         </header>
         <section class="modal-card-body">
           <div class="content" data-field="page"></div>
