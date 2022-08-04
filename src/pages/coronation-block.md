@@ -1,4 +1,4 @@
-# Coronation and Hussey Block
+# Coronation Block
 
 ![Coronation and Hussey Block](images/coronation-hussey-block.jpg)
 
@@ -6,5 +6,4 @@ These downtown buildings were built in 1902 by local architect, H. Russell Halto
 
 ## Documents
 
--   [Coronation Block Designation Report](documents/coronation-block-designation.pdf)
--   [Hussey Block Designation Report](documents/hussey-block-designation.pdf)
+-   [Designation Report](documents/coronation-block-designation.pdf)
