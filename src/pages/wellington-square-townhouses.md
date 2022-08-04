@@ -1,5 +1,7 @@
 # Wellington Square Townhouses
 
+![Wellington Square Townhouses](images/wellington-square-townhouses.jpg)
+
 This townhouse complex, financed by the Lake Superior Co. for its executives, was built in 1913 and is a good example of Edwardian Second Empire urban design.
 
 ## Documents

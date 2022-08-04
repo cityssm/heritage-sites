@@ -1,3 +1,5 @@
 # Forest Research Laboratory
 
+![Forest Research Laboratory](images/forest-research-laboratory.jpg)
+
 The former Forest Insect Laboratory was built in 1944 and quickly became an internationally known centre for research into control of destructive forest insects. The building currently houses the offices of several local businesses.
