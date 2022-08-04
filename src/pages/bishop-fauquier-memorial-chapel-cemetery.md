@@ -4,4 +4,5 @@ The Chapel was built in 1883 and is the only surviving building of the Shingwauk
 
 ## Documents
 
--   [Designation Report](documents/bishop-fauquier-memorial-chapel-cemetery-designation.pdf)
+-   [Chapel Designation Report](documents/bishop-fauquier-memorial-chapel-designation.pdf)
+-   [Cemetery Designation Report](documents/bishop-fauquier-memorial-chapel-cemetery-designation.pdf)

@@ -7,3 +7,7 @@ Built in 1812-1814 by fur trader Charles Oakes Ermatinger, the Old Stone House i
 ![Old Stone House Dining Room](images/old-stone-house-dining-room.jpg)
 
 ![Old Stone House Winter Kitchen](images/old-stone-house-winter-kitchen.jpg)
+
+## Documents
+
+-   [Designation Report](documents/old-stone-house-designation.pdf)
