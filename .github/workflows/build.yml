@@ -3,16 +3,16 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_TOKEN }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
-      - run: npm install -g npm@7
-      - run: npm ci
+          node-version: '16'
+      - name: Install Build Dependencies
+        run: npm ci
       - name: Run Build
         run: npm run build
         env:
