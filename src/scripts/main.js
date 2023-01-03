@@ -40,11 +40,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
             return;
         }
         if (heritageSite.hasPage === "TRUE") {
-            modalElement.querySelector("[data-field='page']").innerHTML = "<p class=\"pt-4 has-text-centered\">" +
-                "<i class=\"fas fa-3x fa-spin fa-circle-notch has-text-grey-lighter\"></i><br />" +
-                "<em class=\"has-text-grey\">Loading details...</em>" +
-                "</p>";
-            window.fetch("pages/" + heritageSite.siteId + ".htm")
+            modalElement.querySelector("[data-field='page']").innerHTML =
+                '<p class="pt-4 has-text-centered">' +
+                    '<i class="fas fa-3x fa-spin fa-circle-notch has-text-grey-lighter"></i><br />' +
+                    '<em class="has-text-grey">Loading details...</em>' +
+                    "</p>";
+            window
+                .fetch("pages/" + heritageSite.siteId + ".htm")
                 .then((response) => {
                 return response.text();
             })
@@ -64,16 +66,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
         }
         else {
             modalElement.querySelector("[data-field='page']").innerHTML = "<h1></h1>";
-            modalElement.querySelector("[data-field='page'] h1").textContent = heritageSite.descriptionOfSite;
+            modalElement.querySelector("[data-field='page'] h1").textContent =
+                heritageSite.descriptionOfSite;
         }
-        modalElement.querySelector("[data-field='civicAddress']")
-            .textContent = heritageSite.civicAddress;
-        modalElement.querySelector("[data-field='legalDescription']")
-            .textContent = heritageSite.legalDescription;
-        modalElement.querySelector("[data-field='ownerName']")
-            .textContent = heritageSite.ownerName;
-        modalElement.querySelector("[data-field='ownerAddress']")
-            .textContent = heritageSite.ownerAddress;
+        modalElement.querySelector("[data-field='civicAddress']").textContent =
+            heritageSite.civicAddress;
+        modalElement.querySelector("[data-field='legalDescription']").textContent =
+            heritageSite.legalDescription;
+        modalElement.querySelector("[data-field='ownerName']").textContent = heritageSite.ownerName;
+        modalElement.querySelector("[data-field='ownerAddress']").textContent =
+            heritageSite.ownerAddress;
         modalElement.classList.add("is-active");
         document.querySelector("html").classList.add("is-clipped");
         document.querySelector("main").setAttribute("inert", "inert");
@@ -90,7 +92,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
             });
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 19,
-                attribution: "&copy; <a href=\"https://openstreetmap.org/copyright\">OpenStreetMap contributors</a>"
+                attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
             }).addTo(map);
             L.marker({ lon: longitude, lat: latitude })
                 .bindPopup(heritageSite.descriptionOfSite)
@@ -106,15 +108,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
         "<th>Site Type</th>" +
         "</tr></thead>" +
         "<tbody></tbody>";
-    const searchResultRowInnerHTML = ("<td>" +
-        "<a class=\"has-text-weight-bold\" data-field=\"descriptionOfSite\"></a><br />" +
-        "<span data-field=\"civicAddress\" title=\"Civic Address\"></span>" +
-        "</td>") +
+    const searchResultRowInnerHTML = "<td>" +
+        '<a class="has-text-weight-bold" data-field="descriptionOfSite"></a><br />' +
+        '<span data-field="civicAddress" title="Civic Address"></span>' +
+        "</td>" +
         ("<td>" +
-            "<span data-field=\"bylawNumber\" title=\"Bylaw Number\"></span><br />" +
-            "<span data-field=\"datePassed\" title=\"Date Passed\"></span>" +
+            '<span data-field="bylawNumber" title="Bylaw Number"></span><br />' +
+            '<span data-field="datePassed" title="Date Passed"></span>' +
             "</td>") +
-        "<td data-field=\"siteType\"></td>";
+        '<td data-field="siteType"></td>';
     const refreshSearchResults = () => {
         let resultCount = 0;
         const searchResultsTableElement = document.createElement("table");
@@ -145,14 +147,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
                 const descriptionOfSiteAnchorElement = rowElement.querySelector("[data-field='descriptionOfSite']");
                 descriptionOfSiteAnchorElement.href = "#" + heritageSite.siteId;
                 descriptionOfSiteAnchorElement.textContent = heritageSite.descriptionOfSite;
-                rowElement.querySelector("[data-field='civicAddress']")
-                    .textContent = heritageSite.civicAddress;
-                rowElement.querySelector("[data-field='bylawNumber']")
-                    .textContent = heritageSite.bylawNumber;
-                rowElement.querySelector("[data-field='datePassed']")
-                    .textContent = heritageSite.datePassed;
-                rowElement.querySelector("[data-field='siteType']")
-                    .textContent = heritageSite.siteType;
+                rowElement.querySelector("[data-field='civicAddress']").textContent = heritageSite.civicAddress;
+                rowElement.querySelector("[data-field='bylawNumber']").textContent = heritageSite.bylawNumber;
+                rowElement.querySelector("[data-field='datePassed']").textContent =
+                    heritageSite.datePassed;
+                rowElement.querySelector("[data-field='siteType']").textContent =
+                    heritageSite.siteType;
                 searchResultsTableElement.querySelector("tbody").append(rowElement);
             }
         }
@@ -161,22 +161,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
             searchResultsElement.append(searchResultsTableElement);
         }
         else {
-            searchResultsElement.innerHTML = "<div class=\"message is-info\">" +
-                "<p class=\"message-body\">No heritage sites have been found using the above search criteria.</p>" +
-                "</div>";
+            searchResultsElement.innerHTML =
+                '<div class="message is-info">' +
+                    '<p class="message-body">No heritage sites have been found using the above search criteria.</p>' +
+                    "</div>";
         }
     };
     const loadData = () => {
-        window.fetch("data/heritageSites.json")
+        window
+            .fetch("data/heritageSites.json")
             .then((response) => {
             return response.json();
         })
             .then((loadedHeritageSites) => {
             heritageSites = loadedHeritageSites;
             for (const heritageSite of heritageSites) {
-                heritageSite.searchString = heritageSite.descriptionOfSite.toLowerCase() + " " +
-                    heritageSite.civicAddress.toLowerCase() + " " +
-                    heritageSite.keywords.toLowerCase();
+                heritageSite.searchString =
+                    heritageSite.descriptionOfSite.toLowerCase() +
+                        " " +
+                        heritageSite.civicAddress.toLowerCase() +
+                        " " +
+                        heritageSite.keywords.toLowerCase();
             }
             if (window.location.hash !== "") {
                 openHeritageSiteModal();
@@ -205,7 +210,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
     }
     loadData();
     searchStringElement.addEventListener("keyup", refreshSearchResults);
-    modalElement.querySelector("#modal-button--close").addEventListener("click", closeHeritageSiteModalAndClearHash);
+    modalElement
+        .querySelector("#modal-button--close")
+        .addEventListener("click", closeHeritageSiteModalAndClearHash);
     document.addEventListener("keydown", (keyboardEvent) => {
         if (modalElement.classList.contains("is-active") && keyboardEvent.key === "Escape") {
             closeHeritageSiteModalAndClearHash();

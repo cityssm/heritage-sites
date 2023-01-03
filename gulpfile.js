@@ -3,7 +3,8 @@ import changed from "gulp-changed";
 import minify from "gulp-minify";
 const publicJavascriptsDestination = "docs/scripts";
 const publicJavascriptsMinFunction = () => {
-    return gulp.src("src/scripts/*.js", { allowEmpty: true })
+    return gulp
+        .src("src/scripts/*.js", { allowEmpty: true })
         .pipe(changed(publicJavascriptsDestination, {
         extension: ".min.js"
     }))
@@ -13,7 +14,8 @@ const publicJavascriptsMinFunction = () => {
 gulp.task("public-javascript-min", publicJavascriptsMinFunction);
 const publicStylesDestination = "docs/styles";
 const publicStylesCopyFunction = () => {
-    return gulp.src("src/styles/*.css", { allowEmpty: true })
+    return gulp
+        .src("src/styles/*.css", { allowEmpty: true })
         .pipe(gulp.dest(publicStylesDestination));
 };
 gulp.task("public-styles", publicStylesCopyFunction);
