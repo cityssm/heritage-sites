@@ -1,11 +1,16 @@
 # Sault Ste. Marie Heritage Sites Search
 
-[Early Proof of Concept](https://cityssm.github.io/heritage-sites/) - Under Development
+![Screenshot of Old Stone House Record](screenshot.png)
 
-[Heritage Properties on SaultSteMarie.ca](https://saultstemarie.ca/City-Hall/City-Departments/Community-Development-Enterprise-Services/Community-Services/Recreation-and-Culture/Historic-Sites-and-Heritage/Municipal-Heritage-Committee/Heritage-Properties.aspx) - Current
+[Sault Ste. Marie Heritage Sites](https://cityssm.github.io/heritage-sites/)
 
-## Goals of the New Site
+## Open Data Files
 
--   **Searchable**
--   More property information.
--   Data more open.
+-   [heritageSites.csv](src/data/heritageSites.csv)
+-   [heritageSites.json](docs/data/heritageSites.json)
+
+## Data Directories
+
+-   [Heritage Site Details (Markdown)](src/pages/)
+-   [Images](docs/images/)
+-   [Documents](docs/documents/)
