@@ -1,6 +1,7 @@
 siteId,descriptionOfSite,civicAddress,legalDescription,ownerName,ownerAddress,bylawNumber,datePassed,latitude,longitude,siteType,designatedOrListed,hasPage,keywords
 1902-family-residence,1902 Family Residence,115 Upton Road,PLAN 2034 LOT 4 LOT 5,,,83-266,1983-10-24,46.505858,-84.313738,Property,Designated,TRUE,
 34-36-herrick-street,34 - 36 Herrick Street,34 - 36 Herrick Street,"Part of Lot 1, Block E, Plan 286 being Part 1 & 2 on 1-8517",,,95-89,1995-05-29,46.507666,-84.322759,Property,Designated,TRUE,
+54-summit-avenue,54 Summit Avenue,54 Summit Avenue,PLAN 71 LOT 14 LOT 15,,,2023-189,2023-11-20,46.51350,-84.32053,Property,Designated,TRUE,gables
 algonquin-hotel,Algonquin Hotel,864 Queen St E,PLAN 301 PT LOT 1 PLAN 605 LOTS A TO C PT LOT D CJ BRAMPTONS PRIVATE PLAN PT LOT E AND RP 1R13472 PART 1,,,83-60,1983-02-28,46.506336,-84.323058,Property,Designated,TRUE,
 barnes-block,Barnes Block,3 - 7 Queen St E,PT LT 1 PL 3878 ST. MARY'S AS IN T319438; SAULT STE. MARIE,,,86-189,1986-07-28,46.51749,-84.341056,Property,Designated,TRUE,
 barnes-fawcett-block,Barnes-Fawcett Block,358 - 366 Queen St E,LT 5 PL 327 ST. MARY'S; PT LT 4 PL 327 ST. MARY'S AS IN T139845; SAULTSTE. MARIE,,,89-312,1989-10-16,46.512789,-84.334364,Property,Designated,TRUE,
