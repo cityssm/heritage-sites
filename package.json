@@ -1,45 +1,45 @@
 {
-    "name": "heritage-sites",
-    "version": "1.0.0",
-    "description": "A searchable database of heritage sites in Sault Ste. Marie ",
-    "type": "module",
-    "exports": "./build.js",
-    "scripts": {
-        "build": "node build.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/cityssm/heritage-sites.git"
-    },
-    "author": "The Corporation of the City of Sault Ste. Marie",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/cityssm/heritage-sites/issues"
-    },
-    "homepage": "https://github.com/cityssm/heritage-sites#readme",
-    "dependencies": {
-        "csvtojson": "^2.0.10",
-        "marked": "^4.2.5"
-    },
-    "devDependencies": {
-        "@cityssm/bulma-js": "^0.4.0",
-        "@types/csvtojson": "^2.0.0",
-        "@types/gulp": "^4.0.10",
-        "@types/gulp-changed": "^0.0.35",
-        "@types/gulp-minify": "^3.1.1",
-        "@types/leaflet": "^1.9.0",
-        "@types/marked": "^4.0.8",
-        "@types/node": "^18.11.18",
-        "@typescript-eslint/eslint-plugin": "^5.48.0",
-        "@typescript-eslint/parser": "^5.48.0",
-        "eslint": "^8.31.0",
-        "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-promise": "^6.1.1",
-        "eslint-plugin-unicorn": "^45.0.2",
-        "gulp": "^4.0.2",
-        "gulp-changed": "^4.0.3",
-        "gulp-minify": "^3.1.0"
-    },
-    "private": true
+  "name": "heritage-sites",
+  "version": "1.0.0",
+  "description": "A searchable database of heritage sites in Sault Ste. Marie ",
+  "type": "module",
+  "exports": "./build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cityssm/heritage-sites.git"
+  },
+  "author": "The Corporation of the City of Sault Ste. Marie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cityssm/heritage-sites/issues"
+  },
+  "homepage": "https://github.com/cityssm/heritage-sites#readme",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "marked": "^4.2.5"
+  },
+  "devDependencies": {
+    "@cityssm/bulma-js": "^0.4.0",
+    "@types/csvtojson": "^2.0.0",
+    "@types/gulp": "^4.0.10",
+    "@types/gulp-changed": "^0.0.35",
+    "@types/gulp-minify": "^3.1.1",
+    "@types/leaflet": "^1.9.0",
+    "@types/marked": "^4.0.8",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^45.0.2",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.3",
+    "gulp-minify": "^3.1.0"
+  },
+  "private": true
 }

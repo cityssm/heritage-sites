@@ -6,4 +6,4 @@ This is an attractive 1 3/4 storey bungalow of local sandstone constructed in 19
 
 ## Documents
 
--   [Designation Report](documents/1035-queen-street-east-designation.pdf)
+- [Designation Report](documents/1035-queen-street-east-designation.pdf)

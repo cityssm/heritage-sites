@@ -6,4 +6,4 @@ Built as a single structure in 1889, this duplex is an example of a popular Fren
 
 ## Documents
 
--   [Designation Report](documents/34-36-herrick-street-designation.pdf)
+- [Designation Report](documents/34-36-herrick-street-designation.pdf)
