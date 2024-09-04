@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "isolatedModules": false,
+    "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "allowUnreachableCode": false
+  },
+  "compileOnSave": true,
+  "buildOnSave": true,
+  "include": ["docs/scripts/*"]
+}

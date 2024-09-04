@@ -6,11 +6,11 @@
 
 ## Open Data Files
 
--   [heritageSites.csv](src/data/heritageSites.csv)
--   [heritageSites.json](docs/data/heritageSites.json)
+- [heritageSites.csv](docs/data/heritageSites.csv)
+- [heritageSites.json](docs/data/heritageSites.json)
 
 ## Data Directories
 
--   [Heritage Site Details (Markdown)](src/pages/)
--   [Images](docs/images/)
--   [Documents](docs/documents/)
+- [Heritage Site Details (Markdown)](docs/markdown/)
+- [Images](docs/images/)
+- [Documents](docs/documents/)

@@ -1,0 +1,3 @@
+# 618 - 620 Queen Street East
+
+Built prior to 1901, this building has only had its ground floor modernized and the 2nd and 3rd floors are still the original brick and window openings. The building housed the high school, for two years in 1904-1905, which Norman Bethune attended while in Sault Ste. Marie. The main floor has been home to the Robert Pratt Dry Goods store for many years and more recently Virene’s. The building is unusually large (3 stories) for Queen St. at the time and thus still stands out.

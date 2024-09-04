@@ -1,0 +1,3 @@
+# 508, 510, 512 Queen Street East (Elizabeth Wilcox Building)
+
+This commercial building was built in 1902 of brick with art deco concrete columns. The first occupant was Wilcox-Eldridge Real Estate Company. The building retains the art deco style, which is unique in Sault Ste. Marie, and still has its original windows and doors. It is another of the buildings on Queen Street that were built before World War I and has retained its unique style. It has housed many businesses and offices since.

@@ -1,0 +1,5 @@
+# 801, 803, 805 Queen Street East (McCormick Block)
+
+This building was built around 1905 but shows up as the McCormick Block in 1907. It is noted to have a tin ceiling in the entrance, steel pillars for support, decorative brick façade on the 2nd floor, the windows across the front are wood and retrain their original shape. It is highly visible building on Queen Street and prominent within the Heritage Block.
+
+In the early years, it was home to grocery wholesalers, and a fish market. More recently it was home to Rooney & Mervyn, Wholesalers.

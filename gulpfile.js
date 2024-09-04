@@ -1,31 +1,20 @@
-import gulp from "gulp";
-import changed from "gulp-changed";
-import minify from "gulp-minify";
-const publicJavascriptsDestination = "docs/scripts";
-const publicJavascriptsMinFunction = () => {
+import gulp from 'gulp';
+import gulpSass from 'gulp-sass';
+import * as dartSass from 'sass';
+const sass = gulpSass(dartSass);
+const stylesFolder = 'docs/styles';
+function publicSCSSFunction() {
     return gulp
-        .src("src/scripts/*.js", { allowEmpty: true })
-        .pipe(changed(publicJavascriptsDestination, {
-        extension: ".min.js"
-    }))
-        .pipe(minify({ noSource: true, ext: { min: ".min.js" } }))
-        .pipe(gulp.dest(publicJavascriptsDestination));
-};
-gulp.task("public-javascript-min", publicJavascriptsMinFunction);
-const publicStylesDestination = "docs/styles";
-const publicStylesCopyFunction = () => {
-    return gulp
-        .src("src/styles/*.css", { allowEmpty: true })
-        .pipe(gulp.dest(publicStylesDestination));
-};
-gulp.task("public-styles", publicStylesCopyFunction);
+        .src(`${stylesFolder}/*.scss`)
+        .pipe(sass({ outputStyle: 'compressed', includePaths: ['node_modules'] }))
+        .pipe(gulp.dest(stylesFolder));
+}
+gulp.task('public-styles', publicSCSSFunction);
 const watchFunction = () => {
-    gulp.watch("src/scripts/*.js", publicJavascriptsMinFunction);
-    gulp.watch("src/styles/*.css", publicStylesCopyFunction);
+    gulp.watch(`${stylesFolder}/*.scss`, publicSCSSFunction);
 };
-gulp.task("watch", watchFunction);
-gulp.task("default", () => {
-    publicJavascriptsMinFunction();
-    publicStylesCopyFunction();
+gulp.task('watch', watchFunction);
+gulp.task('default', () => {
+    publicSCSSFunction();
     watchFunction();
 });
