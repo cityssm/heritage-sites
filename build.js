@@ -1,34 +1,32 @@
-import * as fs from 'fs';
+import fs from 'fs/promises';
 import { marked } from 'marked';
 import csvtojson from 'csvtojson';
 const sourcePagesFolderPath = 'docs/markdown/';
 const wwwPagesFolderPath = 'docs/pages/';
-fs.readdir(sourcePagesFolderPath, (readDirectoryError, pageFiles) => {
-    for (const pageFile of pageFiles) {
-        if (!pageFile.endsWith('.md')) {
-            continue;
-        }
-        const htmlFilePath = wwwPagesFolderPath +
-            pageFile.slice(0, Math.max(0, pageFile.length - 2)) +
-            'htm';
-        console.log('Building ' + htmlFilePath + ' ...');
-        fs.readFile(sourcePagesFolderPath + pageFile, 'utf8', (readFileError, markdownData) => {
-            const htmlData = marked(markdownData);
-            try {
-                fs.writeFileSync(htmlFilePath, htmlData);
-            }
-            catch (error) {
-                console.error(error);
-            }
-        });
+const pageFiles = await fs.readdir(sourcePagesFolderPath);
+for (const pageFile of pageFiles) {
+    if (!pageFile.endsWith('.md')) {
+        continue;
     }
-});
+    const htmlFilePath = wwwPagesFolderPath +
+        pageFile.slice(0, Math.max(0, pageFile.length - 2)) +
+        'htm';
+    console.log('Building ' + htmlFilePath + ' ...');
+    const markdownData = await fs.readFile(sourcePagesFolderPath + pageFile, 'utf8');
+    const htmlData = await marked(markdownData);
+    try {
+        await fs.writeFile(htmlFilePath, htmlData);
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
 const heritageSitesCsvPath = 'docs/data/heritageSites.csv';
 const heritageSitesJsonPath = 'docs/data/heritageSites.json';
 console.log('Building ' + heritageSitesJsonPath + ' ...');
 const heritageSitesJson = await csvtojson().fromFile(heritageSitesCsvPath);
 try {
-    fs.writeFileSync(heritageSitesJsonPath, JSON.stringify(heritageSitesJson));
+    await fs.writeFile(heritageSitesJsonPath, JSON.stringify(heritageSitesJson));
 }
 catch (error) {
     console.error(error);
