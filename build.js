@@ -1,6 +1,6 @@
-import fs from 'fs/promises';
-import { marked } from 'marked';
+import fs from 'node:fs/promises';
 import csvtojson from 'csvtojson';
+import { marked } from 'marked';
 const sourcePagesFolderPath = 'docs/markdown/';
 const wwwPagesFolderPath = 'docs/pages/';
 const pageFiles = await fs.readdir(sourcePagesFolderPath);

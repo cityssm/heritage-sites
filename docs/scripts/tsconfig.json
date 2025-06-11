@@ -10,6 +10,5 @@
     "allowUnreachableCode": false
   },
   "compileOnSave": true,
-  "buildOnSave": true,
-  "include": ["docs/scripts/*"]
+  "buildOnSave": true
 }
