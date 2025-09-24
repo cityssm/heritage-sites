@@ -1,3 +1,9 @@
+# Deprecated
+
+See [Heritage Properties on SaultSteMarie.ca](https://saultstemarie.ca/government/historic-sites-and-heritage/heritage-properties/)
+
+---
+
 # Sault Ste. Marie Heritage Sites Search
 
 ![Screenshot of Old Stone House Record](screenshot.png)
