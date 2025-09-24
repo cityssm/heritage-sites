@@ -7,6 +7,13 @@ import type { HeritageSite } from '../data/types.js'
 declare const bulmaJS: BulmaJS
 declare const L
 ;(() => {
+  const urlParams = new URLSearchParams(window.location.search)
+
+  if (urlParams.get('redirect') !== 'false') {
+    window.location.href = 'https://saultstemarie.ca/government/historic-sites-and-heritage/heritage-properties/'
+    return
+  }
+
   let heritageSites: HeritageSite[] = []
 
   const searchStringElement = document.querySelector(

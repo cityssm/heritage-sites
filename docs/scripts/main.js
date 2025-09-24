@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 (() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('redirect') !== 'false') {
+        window.location.href = 'https://saultstemarie.ca/government/historic-sites-and-heritage/heritage-properties/';
+        return;
+    }
     let heritageSites = [];
     const searchStringElement = document.querySelector('#searchString');
     const searchResultsElement = document.querySelector('#searchResults');
